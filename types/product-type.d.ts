@@ -1,5 +1,8 @@
 type ProductType = {
     name: string, 
-    price: number | null,
-    image: string 
+    description: string | null,
+    unit_amount: number | null,
+    quantity?: number | 0,
+    image: string, 
+    id: string
 }
