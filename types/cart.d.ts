@@ -10,4 +10,5 @@ type CartItem = {
 type CartState = {
     isOpen: boolean,
     cart: CartItem[]
+    toggleCard: () => void
 }
