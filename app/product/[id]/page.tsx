@@ -1,6 +1,6 @@
 import formatPrice from "@/utils/priceFormat";
 import Image from "next/image";
-
+import AddCart from "./add-cart";
 export default async function Product({ searchParams }: SearchParamType) {
   return (
     <div className="flex justify-between gap-24 p-12 text-gray-700">
@@ -20,12 +20,7 @@ export default async function Product({ searchParams }: SearchParamType) {
               : "N/A"}
           </p>
         </div>
-        <button
-          className="my-12 text-white py-2 px-6 font-med
-       rounded-md bg-teal-700 "
-        >
-          Add to card
-        </button>
+        <AddCart {...searchParams} />
       </div>
     </div>
   );

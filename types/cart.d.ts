@@ -1,14 +1,15 @@
-type CartItem = {
+type AddCartType = {
     name: string, 
     id: string,
-    images?: string[],
+    image?: string[],
     description?: string,
-    unit_amount: number,
-    quantity: number,
+    unit_amount: number | null,
+    quantity?: number | 1,
 }
 
 type CartState = {
     isOpen: boolean,
     cart: CartItem[]
     toggleCard: () => void
+    addProduct: (item: CartItem) => void
 }
