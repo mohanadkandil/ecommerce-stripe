@@ -11,5 +11,6 @@ type CartState = {
     isOpen: boolean,
     cart: CartItem[]
     toggleCard: () => void
-    addProduct: (item: CartItem) => void
+    addProduct: (item: AddCartType) => void
+    removeProduct: (item: AddCartType) => void
 }
