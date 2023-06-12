@@ -8,6 +8,12 @@ import basket from "@/public/basket.png";
 
 export default function Cart() {
   const cartStore = useCartStore();
+
+  // total price for each item in cart using reduce higher order function
+  const totalPrice = cartStore.cart.reduce((acc, item) => {
+    return acc + item.unit_amount! * item.quantity!;
+  }, 0);
+
   return (
     <div
       onClick={() => cartStore.toggleCard()}
@@ -43,6 +49,9 @@ export default function Cart() {
           </div>
         ))}
 
+        {/* Checkout and total */}
+
+        <p>Total: {formatPrice(totalPrice)}</p>
         {cartStore.cart.length > 0 && (
           <button className="py-2 mt-4 bg-teal-700 w-full rounded-md text-white">
             Checkout
